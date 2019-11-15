@@ -1,3 +1,4 @@
+
 var algo = document.querySelector("html");
 var boton = document.querySelector("#boton");
 var texto = document.querySelector("#pais")
@@ -17,7 +18,7 @@ xml.onreadystatechange = function(){
         var respuesta = xml.responseText; 
         console.log(respuesta);
         respuestaxml = parser.parseFromString(respuesta,"text/xml");
-        parrafo.innerHTML = respuestaxml.querySelector("channel").innerHTML;
+        parrafo.innerHTML = respuesta;
     }
 };
 
@@ -28,4 +29,10 @@ function Aservidor(){
     xml.send()
 };
 
-
+window.onload = function(){
+    var todo = document.querySelectorAll("*");
+    for(valores of todo)
+    {
+        valores.classList.add("global");
+    }
+};
