@@ -3,7 +3,7 @@ var algo = document.querySelector("html");
 var boton = document.querySelector("#boton");
 var texto = document.querySelector("#pais")
 var xml = new XMLHttpRequest();
-var parser = new DOMParser();
+var parser = new DOMParser(); 
 var parrafo = document.querySelector("#parrafo");
 
 algo.classList.add("clasemira");
@@ -18,7 +18,7 @@ xml.onreadystatechange = function(){
         var respuesta = xml.responseText; 
         console.log(respuesta);
         respuestaxml = parser.parseFromString(respuesta,"text/xml");
-        parrafo.innerHTML = respuesta;
+        parrafo.innerHTML = respuestaxml.querySelector("location").attributes.city;
     }
 };
 
@@ -29,6 +29,7 @@ function Aservidor(){
     xml.send()
 };
 
+
 window.onload = function(){
     var todo = document.querySelectorAll("*");
     for(valores of todo)
@@ -36,3 +37,11 @@ window.onload = function(){
         valores.classList.add("global");
     }
 };
+
+window.addEventListener("DOMinsertedNode", function(){
+    var todo = document.querySelectorAll("*");
+    for(valores of todo)
+    {
+        valores.classList.add("global");
+    }
+});
