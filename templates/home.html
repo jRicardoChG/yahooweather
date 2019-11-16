@@ -6,19 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home</title>
-    <script src="static/javascript/javascript.js" defer></script>
+    <!-- <script src="static/javascript/javascript.js" defer></script> -->
+    <script src="static/javascript/jquery.js" defer></script>
     <link rel="stylesheet" href="static/css/estilos.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10">
+        <div class="col-0 col-sm-0 col-md-1 col-xl-3"></div>
+        <div class="col-12 col-sm-12 col-md-10 col-xl-6">
             <section>
                 <h2>App para conocer el estado del clima usando Yahoo weather</h2>
                 <form class="form-group">
@@ -69,8 +68,8 @@
                             <th class="centrar">Codigo</th>
                             <th class="centrar">Fecha</th>
                             <th class="centrar">Dia</th>
-                            <th class="centrar">Temp Minima</th>
-                            <th class="centrar">Temp Maxima</th>
+                            <th class="centrar">Temp Minima (C)</th>
+                            <th class="centrar">Temp Maxima (C)</th>
                             <th class="centrar">Estado</th>
                         </thead>
                         <tbody>
@@ -81,7 +80,7 @@
             </section>
 
         </div>
-        <div class="col-1"></div>
+        <div class="col-0 col-sm-0 col-md-1 col-xl-3"></div>
     </div>
 
 </body>

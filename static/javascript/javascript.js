@@ -14,6 +14,14 @@ boton.addEventListener("click", function(){
     Aservidor();
 });
 
+function Aservidor(){
+    var pais = texto.value;
+    var ciudad = texto2.value;
+    var mensaje = {"mensaje":"Hola servidor me escuchas"};
+    xml.open("GET","/peticion?mensaje="+mensaje["mensaje"]+"&"+"pais="+pais+"&"+"ciudad="+ciudad,true);
+    xml.send()
+};
+
 xml.onreadystatechange = function(){
     if (xml.readyState == 4)
     {
@@ -28,15 +36,6 @@ xml.onreadystatechange = function(){
         }
     }
 };
-
-function Aservidor(){
-    var pais = texto.value;
-    var ciudad = texto2.value;
-    var mensaje = {"mensaje":"Hola servidor me escuchas"};
-    xml.open("GET","/peticion?mensaje="+mensaje["mensaje"]+"&"+"pais="+pais+"&"+"ciudad="+ciudad,true);
-    xml.send()
-};
-
 
 window.onload = function(){
     var todo = document.querySelectorAll("*");
