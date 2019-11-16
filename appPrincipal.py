@@ -37,8 +37,7 @@ def cliente():
 
 @app.route("/",methods=["GET","POST"])
 def index():
-    yahooPeticion = peticion("ilinois")
-    return render_template("home.html",respuesta=yahooPeticion)
+    return render_template("home.html")
 
 #-------------------------------------------------------------------
 

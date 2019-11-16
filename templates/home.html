@@ -19,13 +19,66 @@
     <div class="row">
         <div class="col-1"></div>
         <div class="col-10">
-                <h2>Hola mundo soy la app principal</h2>
-                <input type="text" id="pais">
-                <button id="boton">Soy Boton</button>
-                <p id="parrafo">{{respuesta}}</p>
+            <section>
+            <h2>App para conocer el estado del clima usando Yahoo weather</h2>
+            <div id="divPresentacion" class="">
+                <h3> Elije una ciudad por favor</h3>
+            </div>
+            <form class="form-group">
+                <input type="text" id="pais" class="form-control">
+                <button id="boton" type="button" class="form-control btn btn-primary">Buscar Ciudad</button>
+            </form>
+            </section>
+            <hr>
+            <section id="detalles" class="hide">
+                <div id="divPeticion" class="">
+                    <p id="nomCiudad"></p>
+                    <p id="nompais"></p>
+                    <p id="nomRegion"></p>
+                    <p>Coordenadas</p>
+                    <p id="lat">latitud:</p>
+                    <p id="long">longitud:</p>
+                </div>
+
+                <div id="detallesAtmofericos">
+                    <p>Hora de la solicitud</p>
+                    <p id="horaSolicitud"></p>
+                    <p>Humedad</p>
+                    <p id="humedad">humedad</p>
+                    <p>Presion Atmosferica</p>
+                    <p id="presion">presion</p>
+                    <p>Visibilidad</p>
+                    <p id="visibilidad">visibilidad</p>
+                    <p>Hora Amanecer</p>
+                    <p id="amanecer">Amanecer</p>
+                    <p>Hora Anochecer</p>
+                    <p id="anochecer">Anochecer</p>
+
+                </div>
+
+                <div id="predicciones">
+                    <p>Prediciones Climatologicas</p>
+                    <table id="tabla">
+                        <thead>
+
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>hoy</td>
+                                <td>manana</td>
+                                <td>pasado</td>
+                                <td>mananas</td>
+                                <td>Oe</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
         </div>
         <div class="col-1"></div>
     </div>
+
 </body>
 
 </html>

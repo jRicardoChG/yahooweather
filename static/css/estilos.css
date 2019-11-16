@@ -1,8 +1,14 @@
 .global {
   border: solid 1px;
-  border-color: black; }
+  border-color: black;
+  padding: 0px;
+  margin: 0px;
+  text-align: center; }
 
 html {
   background-color: green; }
+
+.hide {
+  display: none; }
 
 /*# sourceMappingURL=estilos.css.map */
