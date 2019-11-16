@@ -7,11 +7,14 @@ import hmac, hashlib
 
 from base64             import b64encode
 
-def peticion(pais):
+def peticion(pais,ciudad):
     app_id = 'tzEEP438'
     consumer_key = 'dj0yJmk9VGNLVUQ3RTRXWjVZJmQ9WVdrOWRIcEZSVkEwTXpnbWNHbzlNQS0tJnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTZi'
     consumer_secret = 'd39e8cbb0f79f939e5eb36d51c70e59f11ceefd2'
-    query = {'location': str(pais), 'format': 'xml', 'u': 'c'}
+    if(ciudad != None or ciudad != ""):
+        query = {'location': str(pais) + "," + str(ciudad), 'format': 'xml', 'u': 'c'}
+    else:
+        query = {'location': str(pais), 'format': 'xml', 'u': 'c'}
     url = 'https://weather-ydn-yql.media.yahoo.com/forecastrss'
     method = 'GET'
     concat = '&'

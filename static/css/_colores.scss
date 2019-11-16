@@ -1,14 +1,65 @@
-.global{
-    border:solid 1px;
-    border-color: black;
-    padding:0px;
-    margin:0px;
-    text-align: center;
-}
-html{
-    background-color: green;
-}
+#html {
+    .centrar {
+        text-align: center;
+    }
 
-.hide{
-    display:none;
+    .subtitulo {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    input {
+        text-align: center;
+    }
+
+    .global {
+        // border:solid 1px;
+        border-color: black;
+        padding: 0px;
+        margin: 0px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .hover {
+        p:hover {
+            background-color: lightblue;
+        }
+    }
+
+    #detalles {
+        tr:hover {
+            background-color: lightblue;
+        }
+
+        #nomCiudad {
+            font-size: 3rem;
+        }
+
+        #nompais {
+            font-size: 2rem;
+        }
+
+        #nomRegion {
+            font-size: 1.5rem;
+            font-style: italic;
+        }
+
+        #horaSolicitud {
+            font-style: italic;
+        }
+
+        #tabla {
+            width: 100%;
+        }
+    }
+
+    .hide {
+        display: none;
+    }
 }

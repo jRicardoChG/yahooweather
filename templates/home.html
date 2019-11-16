@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
 
 <head>
     <meta charset="UTF-8">
@@ -20,56 +20,61 @@
         <div class="col-1"></div>
         <div class="col-10">
             <section>
-            <h2>App para conocer el estado del clima usando Yahoo weather</h2>
-            <div id="divPresentacion" class="">
-                <h3> Elije una ciudad por favor</h3>
-            </div>
-            <form class="form-group">
-                <input type="text" id="pais" class="form-control">
-                <button id="boton" type="button" class="form-control btn btn-primary">Buscar Ciudad</button>
-            </form>
+                <h2>App para conocer el estado del clima usando Yahoo weather</h2>
+                <form class="form-group">
+                    <div class="row">
+                            <input type="text" id="pais" class="form-control col-6" placeholder="Elija una ciudad">
+                            <input type="text" id="ciudad" class="form-control col-6" placeholder="Especifique Pais (opcional)">
+                    </div>
+                    <button id="boton" type="button" class="form-control btn btn-primary">Buscar Ciudad</button>
+                </form>
             </section>
             <hr>
             <section id="detalles" class="hide">
-                <div id="divPeticion" class="">
-                    <p id="nomCiudad"></p>
-                    <p id="nompais"></p>
-                    <p id="nomRegion"></p>
-                    <p>Coordenadas</p>
-                    <p id="lat">latitud:</p>
-                    <p id="long">longitud:</p>
+                <div class="row">
+                    <div id="divPeticion" class="col-6">
+                        <p id="nomCiudad"></p>
+                        <p id="nompais"></p>
+                        <p id="nomRegion"></p>
+                        <p class="subtitulo hover">Coordenadas</p>
+                        <div class="row">
+                            <p id="lat" class="col-6 hover">Latitud:</p>
+                            <p id="long" class="col-6 hover">Longitud:</p>
+                        </div>
+                    </div>
+
+                    <div id="detallesAtmofericos" class="col-6">
+                        <p class="col-12 centrar subtitulo">Hora de la solicitud de la información</p>
+                        <p id="horaSolicitud"></p>
+                        <p class="centrar subtitulo">Detalles Atmosfericos</p>
+                        <div class="row">
+                            <p class="col-6">Humedad</p>
+                            <p id="humedad" class="col-6">humedad</p>
+                            <p class="col-6">Presion Atmosferica</p>
+                            <p id="presion" class="col-6">presion</p>
+                            <p class="col-6">Visibilidad</p>
+                            <p id="visibilidad" class="col-6">visibilidad</p>
+                            <p class="col-6">Hora Amanecer</p>
+                            <p id="amanecer" class="col-6">Amanecer</p>
+                            <p class="col-6">Hora Anochecer</p>
+                            <p id="anochecer" class="col-6">Anochecer</p>
+                        </div>
+                    </div>
                 </div>
-
-                <div id="detallesAtmofericos">
-                    <p>Hora de la solicitud</p>
-                    <p id="horaSolicitud"></p>
-                    <p>Humedad</p>
-                    <p id="humedad">humedad</p>
-                    <p>Presion Atmosferica</p>
-                    <p id="presion">presion</p>
-                    <p>Visibilidad</p>
-                    <p id="visibilidad">visibilidad</p>
-                    <p>Hora Amanecer</p>
-                    <p id="amanecer">Amanecer</p>
-                    <p>Hora Anochecer</p>
-                    <p id="anochecer">Anochecer</p>
-
-                </div>
-
+<hr>
                 <div id="predicciones">
-                    <p>Prediciones Climatologicas</p>
-                    <table id="tabla">
+                    <p class="centrar subtitulo">Prediciones Climatologicas</p>
+                    <table id="tabla" class="col-12">
                         <thead>
-
+                            <th class="centrar">Codigo</th>
+                            <th class="centrar">Fecha</th>
+                            <th class="centrar">Dia</th>
+                            <th class="centrar">Temp Minima</th>
+                            <th class="centrar">Temp Maxima</th>
+                            <th class="centrar">Estado</th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>hoy</td>
-                                <td>manana</td>
-                                <td>pasado</td>
-                                <td>mananas</td>
-                                <td>Oe</td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>

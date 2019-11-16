@@ -30,7 +30,8 @@ def cliente():
     if request.method == "GET":
         recibido = request.args.get("mensaje")
         pais= request.args.get("pais")
-        yahooPeticion = peticion(pais)
+        ciudad = request.args.get("ciudad")
+        yahooPeticion = peticion(pais,ciudad)
         print(yahooPeticion)
         return yahooPeticion
 

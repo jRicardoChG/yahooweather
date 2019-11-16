@@ -2,6 +2,7 @@
 var algo = document.querySelector("html");
 var boton = document.querySelector("#boton");
 var texto = document.querySelector("#pais")
+var texto2 = document.querySelector("#ciudad"); 
 var xml = new XMLHttpRequest();
 var parser = new DOMParser(); 
 var parrafo = document.querySelector("#parrafo");
@@ -30,8 +31,9 @@ xml.onreadystatechange = function(){
 
 function Aservidor(){
     var pais = texto.value;
+    var ciudad = texto2.value;
     var mensaje = {"mensaje":"Hola servidor me escuchas"};
-    xml.open("GET","/peticion?mensaje="+mensaje["mensaje"]+"&"+"pais="+pais,true);
+    xml.open("GET","/peticion?mensaje="+mensaje["mensaje"]+"&"+"pais="+pais+"&"+"ciudad="+ciudad,true);
     xml.send()
 };
 
@@ -44,7 +46,7 @@ window.onload = function(){
     }
 };
 
-window.addEventListener("DOMinsertedNode", function(){
+window.addEventListener("DOMNodeInserted", function(){
     var todo = document.querySelectorAll("*");
     for(valores of todo)
     {
@@ -53,6 +55,7 @@ window.addEventListener("DOMinsertedNode", function(){
 });
 
 function llenarDatosPagina(respuesta){
+    tabla.children[1].innerHTML = "";
     sectionPeticion.classList.remove("hide");
     console.log(respuesta);
     resXML = parser.parseFromString(respuesta,"text/xml");
@@ -70,17 +73,19 @@ function llenarDatosPagina(respuesta){
     document.querySelector("#anochecer").innerHTML = resXML.querySelector("astronomy").attributes.sunset.nodeValue;
 
     //-------------------- tabla predicciones climaticas
-
-    linea = document.createElement("tr");
-    
-
-    for (atributos of resXML.querySelector("forecast").attributes)
+    cont = 0;
+    forecasts = resXML.querySelectorAll("forecast")    
+    for (dia of forecasts)
     {
-        dato = document.createElement("td");
-        dato.innerHTML = atributos.nodeName;
-        tabla.children[0].appendChild(linea);
-        tabla.children[0].children[0].appendChild(dato);
+        linea = document.createElement("tr");
+        tabla.children[1].appendChild(linea);
+        for (atributo of dia.attributes)
+        {
+            dato = document.createElement("td");
+            dato.innerHTML=atributo.nodeValue;
+            dato.classList.add("centrar");
+            tabla.children[1].children[cont].appendChild(dato);
+        }
+        cont++;
     }
-
-
 }
